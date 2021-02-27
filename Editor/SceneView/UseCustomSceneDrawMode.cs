@@ -27,15 +27,17 @@ public class UseCustomSceneDrawMode {
   }
 
   public static void RefreshDrawModeList() {
-    SceneView.ClearUserDefinedCameraModes();
-
     drawModes = AssetDatabase.FindAssets("t:" + typeof(CustomSceneDrawMode).Name)
+        .Distinct()
         .Select(guid => AssetDatabase.GUIDToAssetPath(guid))
         .Select(path => AssetDatabase.LoadAssetAtPath<CustomSceneDrawMode>(path))
         .ToArray();
 
+    SceneView.ClearUserDefinedCameraModes();
     foreach (var mode in drawModes) {
-      SceneView.AddCameraMode(mode.name, string.IsNullOrWhiteSpace(mode.category) ? "Custom" : mode.category);
+      if (mode.shader != null) {
+        SceneView.AddCameraMode(mode.name, string.IsNullOrWhiteSpace(mode.category) ? "Custom" : mode.category);
+      }
     }
   }
 

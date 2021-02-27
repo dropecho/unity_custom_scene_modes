@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System;
 using UnityEditor;
 
-[CreateAssetMenu(fileName = "CustomSceneDrawMode", menuName = "Dropecho/CustomSceneDrawMode", order = 1)]
+[CreateAssetMenu(fileName = "CustomSceneDrawMode", menuName = "Dropecho/Custom Scene Draw Mode", order = 1)]
 public class CustomSceneDrawMode : ScriptableObject {
   public string category;
   public Shader shader;
