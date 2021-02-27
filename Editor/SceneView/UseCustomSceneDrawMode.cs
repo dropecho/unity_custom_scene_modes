@@ -23,7 +23,9 @@ public class UseCustomSceneDrawMode {
 
   static UseCustomSceneDrawMode() {
     RefreshDrawModeList();
+
     EditorApplication.update += Update;
+    EditorApplication.projectChanged += RefreshDrawModeList;
   }
 
   public static void RefreshDrawModeList() {
@@ -33,10 +35,19 @@ public class UseCustomSceneDrawMode {
         .Select(path => AssetDatabase.LoadAssetAtPath<CustomSceneDrawMode>(path))
         .ToArray();
 
+    // Clear the list and add the custom modes.
     SceneView.ClearUserDefinedCameraModes();
     foreach (var mode in drawModes) {
       if (mode.shader != null) {
         SceneView.AddCameraMode(mode.name, string.IsNullOrWhiteSpace(mode.category) ? "Custom" : mode.category);
+      }
+    }
+
+    // Fix the currently selected item in the drop down, if it was deleted, or this package was removed.
+    foreach (SceneView view in SceneView.sceneViews) {
+      var currentName = view.cameraMode.name;
+      if (drawModes.FirstOrDefault(x => x.name == currentName) == null) {
+        view.cameraMode = SceneView.GetBuiltinCameraMode(DrawCameraMode.Textured);
       }
     }
   }
