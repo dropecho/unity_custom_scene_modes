@@ -1,0 +1,10 @@
+{
+  "name": "com.dropecho.custom_scene_modes",
+  "version": "0.3.0",
+  "description": "A utility to add custom scene modes.",
+  "author": "vantreeseba <vantreeseba@gmail.com>",
+  "repository": "github:dropecho/unity_custom_scene_modes",
+  "license": "MIT",
+  "unity": "2019.1",
+  "unityRelease": "0b5"
+}
