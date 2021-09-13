@@ -1,9 +1,9 @@
 {
   "name": "com.dropecho.custom_scene_modes",
   "displayName": "Custom SceneView Camera Modes",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A utility to add custom scene modes.",
-  "author": "vantreeseba <vantreeseba@gmail.com>",
+  "author": "Dropecho <vantreeseba@gmail.com>",
   "repository": "github:dropecho/unity_custom_scene_modes",
   "license": "MIT",
   "unity": "2019.1",
