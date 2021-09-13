@@ -9,7 +9,7 @@ Open unity, and open the package manager, in the dropdown select install from gi
 
 ![image](https://user-images.githubusercontent.com/316782/133018219-fe062677-fe74-483b-a416-a82d81b8fc9d.png)
 
-It should then show up in the list of installed packages
+It should then show up in the list of installed packages  
 ![image](https://user-images.githubusercontent.com/316782/133018197-a175364c-7be6-44fa-8b49-72ba6552d052.png)
 
 
